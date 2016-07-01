@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(PROTOBUF_ROOT)\src;$(BOOST_ROOT);C:\Python27\include\;$(SolutionDir)thridparty\mysql\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>D:\GameLibs\boost_1_61_0</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(BOOSTLIB)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="datetime\TimeStamp.h" />
+    <ClInclude Include="db\DBConnection.h" />
+    <ClInclude Include="db\DBConnectionPool.h" />
+    <ClInclude Include="db\DBDef.h" />
+    <ClInclude Include="db\DBRecord.h" />
+    <ClInclude Include="db\DBRecordSet.h" />
+    <ClInclude Include="logging\AsyncLoggingDoubleBuffering.h" />
+    <ClInclude Include="logging\AsyncLoggingQueue.h" />
+    <ClInclude Include="logging\LogFile.h" />
+    <ClInclude Include="logging\Logging.h" />
+    <ClInclude Include="logging\LogStream.h" />
+    <ClInclude Include="logging\test\AsyncLogging_test.cpp" />
+    <ClInclude Include="protobuf\google-inl.h" />
+    <ClInclude Include="protobuf\ProtobufCodec.h" />
+    <ClInclude Include="protobuf\ProtobufCodec_test.cpp" />
+    <ClInclude Include="protobuf\ProtobufDispatcher.h" />
+    <ClInclude Include="reactor\Acceptor.h" />
+    <ClInclude Include="reactor\Buffer.h" />
+    <ClInclude Include="reactor\CallBacks.h" />
+    <ClInclude Include="reactor\Channel.h" />
+    <ClInclude Include="reactor\Connector.h" />
+    <ClInclude Include="reactor\Epoller.h" />
+    <ClInclude Include="reactor\EventLoop.h" />
+    <ClInclude Include="reactor\EventLoopThread.h" />
+    <ClInclude Include="reactor\EventLoopThreadPool.h" />
+    <ClInclude Include="reactor\InetAddress.h" />
+    <ClInclude Include="reactor\Poller.h" />
+    <ClInclude Include="reactor\Socket.h" />
+    <ClInclude Include="reactor\SocketOps.h" />
+    <ClInclude Include="reactor\TcpClient.h" />
+    <ClInclude Include="reactor\TcpConnection.h" />
+    <ClInclude Include="reactor\TcpServer.h" />
+    <ClInclude Include="reactor\Timer.h" />
+    <ClInclude Include="reactor\TimerId.h" />
+    <ClInclude Include="reactor\TimerQueue.h" />
+    <ClInclude Include="tcp\Acceptor.h" />
+    <ClInclude Include="tcp\Common.h" />
+    <ClInclude Include="tcp\InetAddress.h" />
+    <ClInclude Include="tcp\Socket.h" />
+    <ClInclude Include="tcp\TcpStream.h" />
+    <ClInclude Include="tcp\Types.h" />
+    <ClInclude Include="thread\Atomic.h" />
+    <ClInclude Include="thread\BlockingQueue.h" />
+    <ClInclude Include="thread\BoundedBlockingQueue.h" />
+    <ClInclude Include="thread\Condition.h" />
+    <ClInclude Include="thread\Exception.h" />
+    <ClInclude Include="thread\Mutex.h" />
+    <ClInclude Include="thread\Singleton.h" />
+    <ClInclude Include="thread\Thread.h" />
+    <ClInclude Include="thread\ThreadLocal.h" />
+    <ClInclude Include="thread\ThreadLocalSingleton.h" />
+    <ClInclude Include="thread\ThreadPool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="datetime\TimeStamp.cpp" />
+    <ClCompile Include="datetime\test\TimeStamp_Unittest.cpp" />
+    <ClCompile Include="db\DBConnection.cpp" />
+    <ClCompile Include="db\DBConnectionPool.cpp" />
+    <ClCompile Include="db\DBRecord.cpp" />
+    <ClCompile Include="db\DBRecordSet.cpp" />
+    <ClCompile Include="db\test\dbconnection_unittest1.cpp" />
+    <ClCompile Include="db\test\dbconnection_unittest2.cpp" />
+    <ClCompile Include="flatbuffer\flatbuffers_test.cpp" />
+    <ClCompile Include="logging\AsyncLoggingDoubleBuffering.cpp" />
+    <ClCompile Include="logging\LogFile.cpp" />
+    <ClCompile Include="logging\Logging.cpp" />
+    <ClCompile Include="logging\LogStream.cpp" />
+    <ClCompile Include="logging\test\LogFile_test.cpp" />
+    <ClCompile Include="logging\test\Logging_test.cpp" />
+    <ClCompile Include="logging\test\LogStream_bench.cpp" />
+    <ClCompile Include="logging\test\LogStream_test.cpp" />
+    <ClCompile Include="protobuf\ProtobufCodec.cpp" />
+    <ClCompile Include="protobuf\protobuf_readtest.cpp" />
+    <ClCompile Include="protobuf\protobuf_writetest.cpp" />
+    <ClCompile Include="reactor\Acceptor.cpp" />
+    <ClCompile Include="reactor\Buffer.cpp" />
+    <ClCompile Include="reactor\Channel.cpp" />
+    <ClCompile Include="reactor\Connector.cpp" />
+    <ClCompile Include="reactor\Epoller.cpp" />
+    <ClCompile Include="reactor\EventLoop.cpp" />
+    <ClCompile Include="reactor\EventLoopThread.cpp" />
+    <ClCompile Include="reactor\EventLoopThreadPool.cpp" />
+    <ClCompile Include="reactor\InetAddress.cpp" />
+    <ClCompile Include="reactor\Poller.cpp" />
+    <ClCompile Include="reactor\Socket.cpp" />
+    <ClCompile Include="reactor\SocketOps.cpp" />
+    <ClCompile Include="reactor\TcpClient.cpp" />
+    <ClCompile Include="reactor\TcpConnection.cpp" />
+    <ClCompile Include="reactor\TcpServer.cpp" />
+    <ClCompile Include="reactor\test\EventLoop_unittest1.cpp" />
+    <ClCompile Include="reactor\test\Eventloop_unittest10.cpp" />
+    <ClCompile Include="reactor\test\Eventloop_unittest11.cpp" />
+    <ClCompile Include="reactor\test\Eventloop_unittest12.cpp" />
+    <ClCompile Include="reactor\test\Eventloop_unittest13.cpp" />
+    <ClCompile Include="reactor\test\EventLoop_unittest2.cpp" />
+    <ClCompile Include="reactor\test\EventLoop_unittest3.cpp" />
+    <ClCompile Include="reactor\test\EventLoop_unittest4.cpp" />
+    <ClCompile Include="reactor\test\EventLoop_unittest5.cpp" />
+    <ClCompile Include="reactor\test\EventLoop_unittest6.cpp" />
+    <ClCompile Include="reactor\test\EventLoop_unittest7.cpp" />
+    <ClCompile Include="reactor\test\Eventloop_unittest8.cpp" />
+    <ClCompile Include="reactor\test\Eventloop_unittest9.cpp" />
+    <ClCompile Include="reactor\Timer.cpp" />
+    <ClCompile Include="reactor\TimerQueue.cpp" />
+    <ClCompile Include="tcp\Acceptor.cpp" />
+    <ClCompile Include="tcp\InetAddress.cpp" />
+    <ClCompile Include="tcp\Socket.cpp" />
+    <ClCompile Include="tcp\TcpStream.cpp" />
+    <ClCompile Include="tcp\Tcp_Test.cpp" />
+    <ClCompile Include="thread\CountDownLatch.h" />
+    <ClCompile Include="thread\Exception.cpp" />
+    <ClCompile Include="thread\test\Atomic_UnitTest.cpp" />
+    <ClCompile Include="thread\test\BlockingQueue_UnitTest.cpp" />
+    <ClCompile Include="thread\test\BoundedBlockingQueue_UnitTest.cpp" />
+    <ClCompile Include="thread\test\CopyAndWrite_UnitTest.cpp" />
+    <ClCompile Include="thread\test\Exception_UnitTest.cpp" />
+    <ClCompile Include="thread\test\Factory.cpp" />
+    <ClCompile Include="thread\test\Observer.cpp" />
+    <ClCompile Include="thread\test\ObserverSafe.cpp" />
+    <ClCompile Include="thread\test\SingletonThreadLocal_UnitTest.cpp" />
+    <ClCompile Include="thread\test\Singleton_UnitTest.cpp" />
+    <ClCompile Include="thread\test\ThreadLocalSingleton_UnitTest.cpp" />
+    <ClCompile Include="thread\test\ThreadLocal_UnitTest.cpp" />
+    <ClCompile Include="thread\test\ThreadPool_UnitTest.cpp" />
+    <ClCompile Include="thread\test\Thread_UnitTest.cpp" />
+    <ClCompile Include="thread\Thread.cpp" />
+    <ClCompile Include="thread\ThreadPool.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
